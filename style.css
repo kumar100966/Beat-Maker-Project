@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+select {
+  background: none;
+  border: 1px solid grey;
+  padding: 1rem;
+  -ms-flex-preferred-size: 12rem;
+      flex-basis: 12rem;
+  margin-right: -5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: "auto";
+      -ms-flex-pack: "auto";
+          justify-content: "auto";
+  -webkit-box-align: "auto";
+      -ms-flex-align: "auto";
+          align-items: "auto";
+  padding: 5rem 5%;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem;
+}
+
+section header {
+  -ms-flex-preferred-size: 7rem;
+      flex-basis: 7rem;
+}
+
+.mute-button {
+  -ms-flex-preferred-size: 3rem;
+      flex-basis: 3rem;
+  cursor: pointer;
+  padding: 1rem .5rem;
+  border: none;
+  background: grey;
+}
+
+.sound-boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: "auto";
+      -ms-flex-pack: "auto";
+          justify-content: "auto";
+  -webkit-box-align: "auto";
+      -ms-flex-align: "auto";
+          align-items: "auto";
+  -ms-flex-preferred-size: 40rem;
+      flex-basis: 40rem;
+}
+
+.box {
+  padding: 2rem;
+  background: blue;
+  margin: .5rem;
+}
+
+svg {
+  display: block;
+  margin: auto;
+  height: 60%;
+  width: 60%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  pointer-events: none;
+}
+
+svg path {
+  fill: white;
+}
+
+.play-button {
+  margin: 4rem 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 1rem 2rem;
+  background: grey;
+  border: none;
+  color: white;
+}
+
+.slider {
+  padding: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.tempo {
+  padding: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=style.css.map */

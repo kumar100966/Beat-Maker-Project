@@ -1,0 +1,106 @@
+
+// SCSS Variable
+
+$text-size: 2rem; 
+
+// Mixins
+
+@mixin flex($direction, $justify:"auto", $align:"auto"){
+    display: flex; 
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Global Styles
+
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: $text-size;
+}
+
+select{
+    background: none; 
+    border: 1px solid grey; 
+    padding: 1rem; 
+    flex-basis: 12rem;
+    margin-right: -5rem;
+}
+
+h2{
+    font-size: 2rem; 
+}
+
+// MAIN Styles
+
+main{
+    @include flex(column); 
+    padding: 5rem 5%; 
+}
+
+section{
+    @include flex(row, space-around, center); 
+    padding: 3rem; 
+
+    header{
+        flex-basis: 7rem; 
+    }
+}
+
+.mute-button{
+    flex-basis: 3rem;
+    cursor: pointer; 
+    padding: 1rem .5rem; 
+    border: none;
+    background: grey; 
+}
+
+.sound-boxes{
+    @include flex(row); 
+    flex-basis: 40rem;
+}
+
+.box{
+    padding: 2rem; 
+    background: blue; 
+    margin: .5rem; 
+}
+
+svg{
+    display: block;
+    margin: auto; 
+    height: 60%; 
+    width: 60%; 
+    object-fit: contain;
+    pointer-events: none;
+}
+
+svg path{
+    fill: white; 
+}
+
+.play-button{
+    margin: 4rem 0; 
+    align-self: center;
+    padding: 1rem 2rem ; 
+    background: grey; 
+    border: none; 
+    color: white; 
+}
+.slider{
+    padding: 2rem; 
+    align-self: center;
+}
+.tempo{
+    padding: 2rem; 
+    align-self: center;
+}
