@@ -38,7 +38,7 @@ class Drumkit {
   }
 
   playDrumBeat(audio) {
-    audio.currentTime = 0.1;
+    audio.currentTime = 0;
     audio.play();
   }
 
@@ -129,5 +129,13 @@ const tempoOutput = document.querySelector(".tempo");
 
 rangeSelector.addEventListener("change", function () {
   drumkit.bpm = rangeSelector.value;
+  if (drumkit.intervalID) {
+    window.clearInterval(drumkit.intervalID);
+    drumkit.intervalID = null;
+    drumkit.start();
+  }
+});
+
+rangeSelector.addEventListener("input", function () {
   tempoOutput.innerText = `Tempo: ${rangeSelector.value}`;
 });
