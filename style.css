@@ -165,4 +165,26 @@ svg path {
       -ms-grid-row-align: center;
       align-self: center;
 }
+
+@-webkit-keyframes boxScale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes boxScale {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
 /*# sourceMappingURL=style.css.map */

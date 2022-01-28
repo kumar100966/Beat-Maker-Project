@@ -132,3 +132,15 @@ svg path{
     padding: 2rem; 
     align-self: center;
 }
+
+@keyframes boxScale {
+
+    from{
+        transform: scale(1); 
+    }
+
+    to{
+        transform: scale(1.5);
+    }
+    
+}
