@@ -152,6 +152,10 @@ svg path {
   cursor: pointer;
 }
 
+.play-button-active {
+  background: #1d1a1a;
+}
+
 .slider {
   padding: 2rem;
   -ms-flex-item-align: center;

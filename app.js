@@ -2,7 +2,7 @@ class Drumkit {
   constructor() {
     this.initialiseSelectors();
     this.index = 0;
-    this.bpm = 150;
+    this.bpm = 100;
     this.intervalID = null;
   }
 
@@ -13,7 +13,6 @@ class Drumkit {
     this.kickAudio = document.querySelector(".kick-sound");
     this.snareAudio = document.querySelector(".snare-sound");
     this.hihatAudio = document.querySelector(".hihat-sound");
-    this.playButton = document.querySelector(".play-button");
   }
 
   repeat() {
@@ -25,23 +24,26 @@ class Drumkit {
     activeBoxes.forEach((box) => {
       box.style.animation = "boxScale .3s ease-in-out alternate 2";
       if (box.classList.contains("kick-box-active")) {
-        this.kickAudio.currentTime = 0.1;
-        this.kickAudio.play();
+        this.playDrumBeat(this.kickAudio);
       }
       if (box.classList.contains("snare-box-active")) {
-        this.snareAudio.currentTime = 0.1;
-        this.snareAudio.play();
+        this.playDrumBeat(this.snareAudio);
       }
       if (box.classList.contains("hihat-box-active")) {
-        this.hihatAudio.currentTime = 0.1;
-        this.hihatAudio.play();
+        this.playDrumBeat(this.hihatAudio);
       }
     });
 
     this.index++;
   }
 
+  playDrumBeat(audio) {
+    audio.currentTime = 0.1;
+    audio.play();
+  }
+
   start() {
+    this.index = 0;
     if (!this.intervalID) {
       this.intervalID = window.setInterval(
         () => this.repeat(),
@@ -53,36 +55,38 @@ class Drumkit {
     window.clearInterval(this.intervalID);
     this.intervalID = null;
   }
+
+  initialiseButtonAndBoxes(drumType, activeDrumClass) {
+    drumType.forEach((element) => {
+      element.addEventListener("click", () =>
+        element.classList.toggle(activeDrumClass)
+      );
+      element.addEventListener(
+        "animationend",
+        () => (element.style.animation = "")
+      );
+    });
+  }
 }
 
 const drumkit = new Drumkit();
 
-drumkit.playButton.addEventListener("click", () => drumkit.start());
+const playButton = document.querySelector(".play-button");
 
-drumkit.kickDrums.forEach((element) => {
-  element.addEventListener("click", () =>
-    element.classList.toggle("kick-box-active")
-  );
-  element.addEventListener(
-    "animationend",
-    () => (element.style.animation = "")
-  );
+function togglePlayButton() {
+  this.classList.toggle("play-button-active");
+  if (this.classList.contains("play-button-active")) {
+    this.innerText = "Stop";
+    return;
+  }
+  this.innerText = "Play";
+}
+
+playButton.addEventListener("click", function () {
+  drumkit.start();
+  togglePlayButton.call(this);
 });
-drumkit.snareDrums.forEach((element) => {
-  element.addEventListener("click", () =>
-    element.classList.toggle("snare-box-active")
-  );
-  element.addEventListener(
-    "animationend",
-    () => (element.style.animation = "")
-  );
-});
-drumkit.hihatDrums.forEach((element) => {
-  element.addEventListener("click", () =>
-    element.classList.toggle("hihat-box-active")
-  );
-  element.addEventListener(
-    "animationend",
-    () => (element.style.animation = "")
-  );
-});
+
+drumkit.initialiseButtonAndBoxes(drumkit.kickDrums, "kick-box-active");
+drumkit.initialiseButtonAndBoxes(drumkit.snareDrums, "snare-box-active");
+drumkit.initialiseButtonAndBoxes(drumkit.hihatDrums, "hihat-box-active");

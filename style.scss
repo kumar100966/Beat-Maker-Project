@@ -124,6 +124,11 @@ svg path{
     transition: all 0.5s ease; 
     cursor: pointer; 
 }
+
+.play-button-active{
+     background: rgb(29, 26, 26); ;
+}
+
 .slider{
     padding: 2rem; 
     align-self: center;
