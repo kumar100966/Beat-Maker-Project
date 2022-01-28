@@ -5,7 +5,7 @@ $text-size: 2rem;
 
 // Mixins
 
-@mixin flex($direction, $justify:"auto", $align:"auto"){
+@mixin flex($direction, $justify:auto, $align:auto){
     display: flex; 
     flex-direction: $direction;
     justify-content: $justify;
@@ -26,13 +26,14 @@ html{
 
 body{
     font-size: $text-size;
+    font-family: 'Poppins', sans-serif;
 }
 
 select{
     background: none; 
     border: 1px solid grey; 
     padding: 1rem; 
-    flex-basis: 12rem;
+    flex-basis: 15rem;
     margin-right: -5rem;
 }
 
@@ -61,7 +62,7 @@ section{
     cursor: pointer; 
     padding: 1rem .5rem; 
     border: none;
-    background: grey; 
+    background: rgb(88, 88, 88); 
 }
 
 .sound-boxes{
@@ -72,8 +73,33 @@ section{
 .box{
     padding: 2rem; 
     background: blue; 
-    margin: .5rem; 
+    margin: .5rem;
+    transition: all 0.5s ease;  
 }
+
+.kick-box{
+    background: rgb(160, 211, 224); 
+    
+}
+
+.snare-box{
+    background: rgb(224, 160, 208); 
+
+}
+.hihat-box{ 
+    background: rgb(224, 194, 160); 
+}
+
+.kick-box-active{
+    background: rgb(59, 197, 231); 
+}
+
+.snare-box-active{
+    background: rgb(218, 58, 178); 
+}
+.hihat-box-active{
+    background: rgb(241, 158, 64); 
+} 
 
 svg{
     display: block;
@@ -92,9 +118,11 @@ svg path{
     margin: 4rem 0; 
     align-self: center;
     padding: 1rem 2rem ; 
-    background: grey; 
+    background: rgb(88, 88, 88); 
     border: none; 
     color: white; 
+    transition: all 0.5s ease; 
+    cursor: pointer; 
 }
 .slider{
     padding: 2rem; 

@@ -11,14 +11,15 @@ html {
 
 body {
   font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 select {
   background: none;
   border: 1px solid grey;
   padding: 1rem;
-  -ms-flex-preferred-size: 12rem;
-      flex-basis: 12rem;
+  -ms-flex-preferred-size: 15rem;
+      flex-basis: 15rem;
   margin-right: -5rem;
 }
 
@@ -34,12 +35,12 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: "auto";
-      -ms-flex-pack: "auto";
-          justify-content: "auto";
-  -webkit-box-align: "auto";
-      -ms-flex-align: "auto";
-          align-items: "auto";
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
   padding: 5rem 5%;
 }
 
@@ -70,7 +71,7 @@ section header {
   cursor: pointer;
   padding: 1rem .5rem;
   border: none;
-  background: grey;
+  background: #585858;
 }
 
 .sound-boxes {
@@ -81,12 +82,12 @@ section header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: "auto";
-      -ms-flex-pack: "auto";
-          justify-content: "auto";
-  -webkit-box-align: "auto";
-      -ms-flex-align: "auto";
-          align-items: "auto";
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
   -ms-flex-preferred-size: 40rem;
       flex-basis: 40rem;
 }
@@ -95,6 +96,32 @@ section header {
   padding: 2rem;
   background: blue;
   margin: .5rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.kick-box {
+  background: #a0d3e0;
+}
+
+.snare-box {
+  background: #e0a0d0;
+}
+
+.hihat-box {
+  background: #e0c2a0;
+}
+
+.kick-box-active {
+  background: #3bc5e7;
+}
+
+.snare-box-active {
+  background: #da3ab2;
+}
+
+.hihat-box-active {
+  background: #f19e40;
 }
 
 svg {
@@ -117,9 +144,12 @@ svg path {
       -ms-grid-row-align: center;
       align-self: center;
   padding: 1rem 2rem;
-  background: grey;
+  background: #585858;
   border: none;
   color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .slider {

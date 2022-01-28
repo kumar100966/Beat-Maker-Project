@@ -11,6 +11,12 @@
     />
     <title>OOP Project</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -29,17 +35,19 @@
           </svg>
         </button>
         <select name="sound" id="sound">
-          <option value="kick-heavy">Kick Heavy</option>
+          <option value="./allSounds/kick-classic.wav">Classic Kick</option>
+          <option value="./allSounds/kick-808.wav">808 Kick</option>
+          <option value="./allSounds/kick-heavy.wav">Kick Heavy</option>
         </select>
         <div class="sound-boxes">
-          <div class="box box1"></div>
-          <div class="box box2"></div>
-          <div class="box box3"></div>
-          <div class="box box4"></div>
-          <div class="box box5"></div>
-          <div class="box box6"></div>
-          <div class="box box7"></div>
-          <div class="box box8"></div>
+          <div class="box box1 kick-box"></div>
+          <div class="box box2 kick-box"></div>
+          <div class="box box3 kick-box"></div>
+          <div class="box box4 kick-box"></div>
+          <div class="box box5 kick-box"></div>
+          <div class="box box6 kick-box"></div>
+          <div class="box box7 kick-box"></div>
+          <div class="box box8 kick-box"></div>
         </div>
       </section>
       <section class="snare">
@@ -57,17 +65,21 @@
           </svg>
         </button>
         <select name="sound" id="sound">
-          <option value="Snare-Vinyl">Snare Vinyl</option>
+          <option value="./allSounds/snare-acoustic01.wav">
+            Classic Snare
+          </option>
+          <option value="./allSounds/snare-808.wav">808 Snare</option>
+          <option value="./allSounds/snare-vinyl02.wav">Snare Vinyl</option>
         </select>
         <div class="sound-boxes">
-          <div class="box box1"></div>
-          <div class="box box2"></div>
-          <div class="box box3"></div>
-          <div class="box box4"></div>
-          <div class="box box5"></div>
-          <div class="box box6"></div>
-          <div class="box box7"></div>
-          <div class="box box8"></div>
+          <div class="box box1 snare-box"></div>
+          <div class="box box2 snare-box"></div>
+          <div class="box box3 snare-box"></div>
+          <div class="box box4 snare-box"></div>
+          <div class="box box5 snare-box"></div>
+          <div class="box box6 snare-box"></div>
+          <div class="box box7 snare-box"></div>
+          <div class="box box8 snare-box"></div>
         </div>
       </section>
       <section class="hihat">
@@ -85,22 +97,28 @@
           </svg>
         </button>
         <select name="sound" id="sound">
-          <option value="808-hihat">808 Hihat</option>
+          <option value="./allSounds/hihat-acoustic01.wav">
+            Hihat Acoustic
+          </option>
+          <option value="./allSounds/hihat-808.wav">808 Hihat</option>
         </select>
         <div class="sound-boxes">
-          <div class="box box1"></div>
-          <div class="box box2"></div>
-          <div class="box box3"></div>
-          <div class="box box4"></div>
-          <div class="box box5"></div>
-          <div class="box box6"></div>
-          <div class="box box7"></div>
-          <div class="box box8"></div>
+          <div class="box box1 hihat-box"></div>
+          <div class="box box2 hihat-box"></div>
+          <div class="box box3 hihat-box"></div>
+          <div class="box box4 hihat-box"></div>
+          <div class="box box5 hihat-box"></div>
+          <div class="box box6 hihat-box"></div>
+          <div class="box box7 hihat-box"></div>
+          <div class="box box8 hihat-box"></div>
         </div>
       </section>
       <button class="play-button">Play</button>
       <div class="slider">slider</div>
       <p class="tempo">Tempo</p>
+      <audio class="kick-sound" src="./allSounds/kick-classic.wav"></audio>
+      <audio class="snare-sound" src="./allSounds/snare-acoustic01.wav"></audio>
+      <audio class="hihat-sound" src="./allSounds/hihat-acoustic01.wav"></audio>
     </main>
     <script src="./app.js"></script>
   </body>
