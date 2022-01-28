@@ -71,7 +71,11 @@ section header {
   cursor: pointer;
   padding: 1rem .5rem;
   border: none;
-  background: #585858;
+  background: #707070;
+}
+
+.mute-button-active {
+  background: #1d1a1a;
 }
 
 .sound-boxes {
@@ -144,7 +148,7 @@ svg path {
       -ms-grid-row-align: center;
       align-self: center;
   padding: 1rem 2rem;
-  background: #585858;
+  background: #707070;
   border: none;
   color: white;
   -webkit-transition: all 0.5s ease;

@@ -104,3 +104,22 @@ function addListenerToSoundSelect(selectElement, audioElement) {
     audioElement.src = this.value;
   });
 }
+
+const kickMuteButton = document.querySelector(".kick-mute-button");
+const snareMuteButton = document.querySelector(".snare-mute-button");
+const hihatMuteButton = document.querySelector(".hihat-mute-button");
+
+addListenersToMuteButtons(kickMuteButton, drumkit.kickAudio);
+addListenersToMuteButtons(snareMuteButton, drumkit.snareAudio);
+addListenersToMuteButtons(hihatMuteButton, drumkit.hihatAudio);
+
+function addListenersToMuteButtons(muteButton, drumAudio) {
+  muteButton.addEventListener("click", function () {
+    this.classList.toggle("mute-button-active");
+    if (this.classList.contains("mute-button-active")) {
+      drumAudio.muted = true;
+    } else {
+      drumAudio.muted = false;
+    }
+  });
+}

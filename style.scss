@@ -62,7 +62,11 @@ section{
     cursor: pointer; 
     padding: 1rem .5rem; 
     border: none;
-    background: rgb(88, 88, 88); 
+    background: rgb(112, 112, 112); 
+}
+
+.mute-button-active{
+    background: rgb(29, 26, 26); 
 }
 
 .sound-boxes{
@@ -118,7 +122,7 @@ svg path{
     margin: 4rem 0; 
     align-self: center;
     padding: 1rem 2rem ; 
-    background: rgb(88, 88, 88); 
+    background: rgb(112, 112, 112);
     border: none; 
     color: white; 
     transition: all 0.5s ease; 
@@ -126,7 +130,7 @@ svg path{
 }
 
 .play-button-active{
-     background: rgb(29, 26, 26); ;
+     background: rgb(29, 26, 26); 
 }
 
 .slider{
