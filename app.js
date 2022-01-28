@@ -123,3 +123,11 @@ function addListenersToMuteButtons(muteButton, drumAudio) {
     }
   });
 }
+
+const rangeSelector = document.querySelector("#range");
+const tempoOutput = document.querySelector(".tempo");
+
+rangeSelector.addEventListener("change", function () {
+  drumkit.bpm = rangeSelector.value;
+  tempoOutput.innerText = `Tempo: ${rangeSelector.value}`;
+});

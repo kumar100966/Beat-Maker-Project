@@ -100,7 +100,7 @@
           <option value="./allSounds/hihat-acoustic01.wav">
             Hihat Acoustic
           </option>
-          <option value="./allSounds/hihat-808.wav">808 Hihat</option>
+          <option value="./allSounds/hihat-digital.wav">Hihat Digital</option>
         </select>
         <div class="sound-boxes">
           <div class="box box1 hihat-box"></div>
@@ -114,8 +114,15 @@
         </div>
       </section>
       <button class="play-button">Play</button>
-      <div class="slider">slider</div>
-      <p class="tempo">Tempo</p>
+      <input
+        type="range"
+        name="range"
+        id="range"
+        min="20"
+        max="300"
+        value="100"
+      />
+      <p class="tempo">Tempo: 100</p>
       <audio class="kick-sound" src="./allSounds/kick-classic.wav"></audio>
       <audio class="snare-sound" src="./allSounds/snare-acoustic01.wav"></audio>
       <audio class="hihat-sound" src="./allSounds/hihat-acoustic01.wav"></audio>
