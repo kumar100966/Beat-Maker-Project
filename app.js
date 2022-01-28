@@ -71,6 +71,10 @@ class Drumkit {
 
 const drumkit = new Drumkit();
 
+drumkit.initialiseButtonAndBoxes(drumkit.kickDrums, "kick-box-active");
+drumkit.initialiseButtonAndBoxes(drumkit.snareDrums, "snare-box-active");
+drumkit.initialiseButtonAndBoxes(drumkit.hihatDrums, "hihat-box-active");
+
 const playButton = document.querySelector(".play-button");
 
 function togglePlayButton() {
@@ -87,6 +91,16 @@ playButton.addEventListener("click", function () {
   togglePlayButton.call(this);
 });
 
-drumkit.initialiseButtonAndBoxes(drumkit.kickDrums, "kick-box-active");
-drumkit.initialiseButtonAndBoxes(drumkit.snareDrums, "snare-box-active");
-drumkit.initialiseButtonAndBoxes(drumkit.hihatDrums, "hihat-box-active");
+const kickSelectElement = document.querySelector("#kick-sound");
+const snareSelectElement = document.querySelector("#snare-sound");
+const hihatSelectElement = document.querySelector("#hihat-sound");
+
+addListenerToSoundSelect(kickSelectElement, drumkit.kickAudio);
+addListenerToSoundSelect(snareSelectElement, drumkit.snareAudio);
+addListenerToSoundSelect(hihatSelectElement, drumkit.hihatAudio);
+
+function addListenerToSoundSelect(selectElement, audioElement) {
+  selectElement.addEventListener("change", function () {
+    audioElement.src = this.value;
+  });
+}
