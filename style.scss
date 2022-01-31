@@ -43,18 +43,39 @@ h2{
 
 // MAIN Styles
 
+header.main{
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 4rem;
+}
+
 main{
     @include flex(column); 
-    padding: 5rem 5%; 
+    padding: 0 5% 5rem 5%; 
 }
 
 section{
     @include flex(row, space-around, center); 
+    flex-wrap: wrap; 
+    
+}
+
+.controls{
+    flex: 1 1 50rem; 
+    @include flex(row, space-around, auto); 
     padding: 3rem; 
+   
 
     header{
         flex-basis: 7rem; 
     }
+}
+
+.sound-boxes{
+    flex: 1 1 80rem; 
+
+    @include flex(row, center); 
+    flex-basis: 40rem;
 }
 
 .mute-button{
@@ -69,10 +90,7 @@ section{
     background: rgb(29, 26, 26); 
 }
 
-.sound-boxes{
-    @include flex(row); 
-    flex-basis: 40rem;
-}
+
 
 .box{
     padding: 2rem; 
@@ -140,6 +158,52 @@ svg path{
 .tempo{
     padding: 2rem; 
     align-self: center;
+}
+
+@media screen and (max-width: 1000px){
+   .controls{
+    justify-content: space-around;
+    margin: 2rem;
+   }
+}
+
+@media screen and (max-width: 500px){
+    html{
+        font-size: 45%; 
+    }
+
+    .mute-button{
+        flex-basis: 4rem; 
+    }
+
+    .controls{
+        justify-content: flex-start;
+        margin: 0rem;
+        padding:3rem 0 3rem 0; 
+        header{
+            flex-basis: 10rem; 
+        }
+
+        .mute-button{
+            margin-right: 2rem;
+        }
+    }
+
+    .sound-boxes{
+        justify-content: space-between;
+    }
+
+    .box{padding: 2.5rem}
+
+
+    select{
+        flex-basis: 20rem;
+    }
+
+    section{
+        margin: 2rem; 
+    }
+    
 }
 
 @keyframes boxScale {

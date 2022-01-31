@@ -27,6 +27,12 @@ h2 {
   font-size: 2rem;
 }
 
+header.main {
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,7 +47,7 @@ main {
   -webkit-box-align: auto;
       -ms-flex-align: auto;
           align-items: auto;
-  padding: 5rem 5%;
+  padding: 0 5% 5rem 5%;
 }
 
 section {
@@ -57,12 +63,53 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.controls {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50rem;
+          flex: 1 1 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
   padding: 3rem;
 }
 
-section header {
+.controls header {
   -ms-flex-preferred-size: 7rem;
       flex-basis: 7rem;
+}
+
+.sound-boxes {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80rem;
+          flex: 1 1 80rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
+  -ms-flex-preferred-size: 40rem;
+      flex-basis: 40rem;
 }
 
 .mute-button {
@@ -76,24 +123,6 @@ section header {
 
 .mute-button-active {
   background: #1d1a1a;
-}
-
-.sound-boxes {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: auto;
-      -ms-flex-pack: auto;
-          justify-content: auto;
-  -webkit-box-align: auto;
-      -ms-flex-align: auto;
-          align-items: auto;
-  -ms-flex-preferred-size: 40rem;
-      flex-basis: 40rem;
 }
 
 .box {
@@ -172,6 +201,53 @@ svg path {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .controls {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 45%;
+  }
+  .mute-button {
+    -ms-flex-preferred-size: 4rem;
+        flex-basis: 4rem;
+  }
+  .controls {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0rem;
+    padding: 3rem 0 3rem 0;
+  }
+  .controls header {
+    -ms-flex-preferred-size: 10rem;
+        flex-basis: 10rem;
+  }
+  .controls .mute-button {
+    margin-right: 2rem;
+  }
+  .sound-boxes {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .box {
+    padding: 2.5rem;
+  }
+  select {
+    -ms-flex-preferred-size: 20rem;
+        flex-basis: 20rem;
+  }
+  section {
+    margin: 2rem;
+  }
 }
 
 @-webkit-keyframes boxScale {
